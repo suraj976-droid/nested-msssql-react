@@ -55,7 +55,7 @@ app.post("/add_complaintt", async (req, res) => {
     .input('address', address)
     .query(customerLocationSQL);
   
-    //insert into awt_uniqueproductmaster using insertedCustomerId as customer_id
+    //insert into complaint_ticket here we can directl insert Customer_id using cust_id for existing customer value or can use insertId
 
     const checkResult = await pool.request().query(`
       SELECT COUNT(*) AS count FROM complaint_ticket WHERE deleted = 0`);
